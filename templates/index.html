@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PneumoFusion-XAI – Pneumonia Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <h1 class="title">Pneumonia Detection-XAI</h1>
+
+    <!-- ❗ ERROR MESSAGE BOX (NEW) -->
+    {% if error_message %}
+    <div class="error-box">
+        <p>{{ error_message }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Upload Form -->
+    <form id="uploadForm" action="/" method="POST" enctype="multipart/form-data">
+        <div class="upload-box" id="dropArea">
+            <p>Drag & Drop Chest X-Ray here</p>
+            <span>or</span>
+            <label for="fileInput" class="choose-btn">Choose Image</label>
+            <input type="file" name="file" id="fileInput" accept="image/*" required hidden>
+            <p id="fileName"></p>
+        </div>
+
+        <button class="predict-btn" type="submit">Analyze X-ray</button>
+    </form>
+
+    <!-- Output Section -->
+    {% if uploaded_image %}
+    <div class="result-section">
+
+        <h2 class="prediction-title">Prediction: <span>{{ prediction }}</span></h2>
+
+        <div class="confidence-box">
+            <h3>Confidence: {{ confidence }}%</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ confidence }}%;"></div>
+            </div>
+        </div>
+
+        <h3 class="severity-box">
+            Severity: <span>{{ severity }}</span> ({{ intensity }}%)
+        </h3>
+
+        <p class="time-text">Processing Time: {{ processing_time }} seconds</p>
+
+        <div class="image-row">
+            <div class="image-card">
+                <h4>Original X-ray</h4>
+                <img src="/static/uploads/{{ uploaded_image }}" alt="Uploaded X-ray">
+            </div>
+
+            <div class="image-card">
+                <h4>PneumoFusion-XAI Heatmap</h4>
+                <img src="/static/results/{{ result_image }}" alt="Heatmap Result">
+            </div>
+        </div>
+
+        {% if report_available %}
+        <a class="report-btn" href="/download_report">📄 Download Diagnostic Report</a>
+        {% endif %}
+
+    </div>
+    {% endif %}
+
+</div>
+
+<script src="/static/js/main.js"></script>
+
+</body>
+</html>
