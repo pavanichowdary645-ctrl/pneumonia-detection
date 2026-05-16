@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PneumoFusion-XAI 🫁
 
 A deep learning web application for **pneumonia detection from chest X-rays** using an ensemble of CNN models with explainable AI (XAI) heatmap visualization.
@@ -86,3 +87,6 @@ Required files:
 ## ⚠️ Disclaimer
 
 This tool is for **research and educational purposes only** and is not a substitute for professional medical diagnosis.
+=======
+# pneumonia-detection
+>>>>>>> 64e076b7b0024931bb1ab67224a2a7c86d48b03f
