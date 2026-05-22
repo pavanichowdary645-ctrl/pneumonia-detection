@@ -1,11 +1,11 @@
 
-# PneumoFusion-XAI 🫁
+# Pneumonia Detection-XAI 🫁
 
 A deep learning web application for **pneumonia detection from chest X-rays** using an ensemble of CNN models with explainable AI (XAI) heatmap visualization.
 
 ## 🔍 Overview
 
-PneumoFusion-XAI combines **VGG**, **ResNet**, and **DenseNet** models in an ensemble to classify chest X-rays as **NORMAL** or **PNEUMONIA**, and generates a fused activation heatmap to visually explain the model's decision.
+Pneumonia Detection-XAI combines **VGG**, **ResNet**, and **DenseNet** models in an ensemble to classify chest X-rays as **NORMAL** or **PNEUMONIA**, and generates a fused activation heatmap to visually explain the model's decision.
 
 ## ✨ Features
 
